@@ -734,172 +734,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* PANEL DE ADMINISTRACIÓN */
-        #adminPanel {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 10000;
-            overflow-y: auto;
-        }
-
-        #adminPanel.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .admin-container {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .admin-close {
-            background: #ef4444;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #2d3748;
-        }
-
-        .input-group input, .input-group select, .input-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-        }
-
-        .input-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .ai-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .ai-btn {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #667eea;
-            background: white;
-            color: #667eea;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .ai-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .ai-btn.manual {
-            border-color: #10b981;
-            color: #10b981;
-        }
-
-        .ai-btn.manual:hover {
-            background: #10b981;
-            color: white;
-        }
-
-        .preview-section {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 2px dashed #cbd5e0;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .action-btn {
-            flex: 1;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .action-btn.publish {
-            background: #10b981;
-            color: white;
-        }
-
-        .action-btn.draft {
-            background: #f59e0b;
-            color: white;
-        }
-
-        .action-btn.edit {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .action-btn.discard {
-            background: #6b7280;
-            color: white;
-        }
-
-        .admin-access {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 9999;
-        }
 
         /* DISCLAIMERS */
         .disclaimer-banner {
@@ -1029,44 +863,6 @@
             margin-top: 20px;
             width: 100%;
         }
-
-        /* REPORTE DE ERRORES */
-        .report-list {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-top: 20px;
-        }
-
-        .report-item {
-            background: #f7fafc;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            border-left: 4px solid #ef4444;
-        }
-
-        .report-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-            color: #6b7280;
-        }
-
-        .report-text {
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-
-        .report-delete {
-            background: #ef4444;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85em;
-        }
     </style>
 </head>
 <body>
@@ -1188,7 +984,7 @@
                 <div class="country-header">
                     <span class="country-flag">🇺🇸</span>
                     <h2 class="country-title">CASOS EMBLEMÁTICOS - ESTADOS UNIDOS</h2>
-                    <span class="country-count">18 casos</span>
+                    <span class="country-count">19 casos</span>
                 </div>
 
                 <div class="cases-container">
@@ -1735,6 +1531,47 @@
 
                         <div class="case-footer">
                             <div class="compensation">💰 $15 millones</div>
+                            <button class="view-details-btn" onclick="showDetail(this)">Ver detalles completos →</button>
+                        </div>
+                    </div>
+
+                    <!-- CASO: Barnes vs Monsanto -->
+                    <div class="case-card emblematico"
+                         data-country="usa"
+                         data-product="glyphosate"
+                         data-status="settlement"
+                         data-damage="lymphoma"
+                         data-emblematic="true"
+                         data-casetype="judicial"
+                         data-scale="individual"
+                         data-search="barnes monsanto glifosato roundup linfoma georgia cobb">
+                        <div class="case-header">
+                            <h3 class="case-title">Barnes vs. Monsanto (2025)</h3>
+                            <div class="badges">
+                                <span class="badge emblematico">⭐ EMBLEMÁTICO</span>
+                                <span class="badge acuerdo">🤝 ACUERDO</span>
+                            </div>
+                        </div>
+
+                        <div class="case-meta">
+                            <span class="meta-item">📍 Georgia (Cobb County)</span>
+                            <span class="meta-item">🧪 Glifosato (Roundup)</span>
+                            <span class="meta-item">👤 Usuario doméstico</span>
+                        </div>
+
+                        <div class="case-description">
+                            John Barnes usó Roundup regularmente durante 20 años en su hogar en Georgia. Desarrolló linfoma no-Hodgkin en 2020. En marzo 2025, jurado de Cobb County le otorgó $2.065 mil millones, el veredicto más grande para un solo demandante en la historia del estado. Caso resuelto por acuerdo confidencial en noviembre 2025.
+                        </div>
+
+                        <div class="case-tags">
+                            <span class="tag">🩺 Linfoma no-Hodgkin</span>
+                            <span class="tag">💰 Veredicto récord Georgia: $2.065B</span>
+                            <span class="tag">🔬 Monsanto Papers</span>
+                            <span class="tag">🤝 Acuerdo confidencial</span>
+                        </div>
+
+                        <div class="case-footer">
+                            <div class="compensation">💰 Acuerdo confidencial (veredicto: $2.065 mil millones)</div>
                             <button class="view-details-btn" onclick="showDetail(this)">Ver detalles completos →</button>
                         </div>
                     </div>
@@ -5100,130 +4937,248 @@
             <button class="back-btn" onclick="hideDetail()" style="margin-top: 20px;">← Volver a la lista</button>
         </div>
 
-        <!-- PANEL DE ADMINISTRACIÓN -->
-        <div id="adminPanel">
-            <div class="admin-container">
-                <div class="admin-header">
-                    <h2>🔧 Panel de Administración</h2>
-                    <button class="admin-close" onclick="closeAdmin()">✕ Cerrar</button>
-                </div>
+        <!-- VISTA DETALLADA BARNES -->
+        <div id="barnesDetailView" class="detail-view" style="display: none;">
+            <button class="back-btn" onclick="hideDetail()">← Volver a la lista</button>
 
-                <div style="display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-                    <button class="ai-btn" id="tabNewCase" onclick="showTab('newCase')" style="flex: 1;">➕ Cargar Caso</button>
-                    <button class="ai-btn" id="tabReports" onclick="showTab('reports')" style="flex: 1; background: white;">📧 Ver Reportes (<span id="reportCount">0</span>)</button>
-                </div>
-
-                <div id="newCaseTab">
-                <div class="input-group">
-                    <label>Identificador del caso:</label>
-                    <input type="text" id="caseIdentifier" placeholder="Ej: Johnson vs. Monsanto | Bayer/Roundup/USA/2020/Acuerdo">
-                </div>
-
-                <div class="ai-buttons">
-                    <button class="ai-btn" onclick="useAI('A')">🤖 IA A - Proponer datos</button>
-                    <button class="ai-btn" onclick="useAI('B')">🤖 IA B - Proponer datos</button>
-                    <button class="ai-btn manual" onclick="manualEntry()">✍️ Carga Manual</button>
-                </div>
-
-                <div id="formFields" style="display:none;">
-                    <div class="input-group">
-                        <label>Título:</label>
-                        <input type="text" id="caseTitle">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Empresa(s):</label>
-                        <input type="text" id="caseCompany">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Producto(s):</label>
-                        <input type="text" id="caseProduct" placeholder="Nombre químico (Nombre comercial)">
-                    </div>
-
-                    <div class="input-group">
-                        <label>País/Jurisdicción:</label>
-                        <input type="text" id="caseCountry">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Año:</label>
-                        <input type="number" id="caseYear" min="2000" max="2030">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Tipo de caso:</label>
-                        <select id="caseType">
-                            <option value="judicial">Judicial</option>
-                            <option value="extrajudicial">Extrajudicial</option>
-                            <option value="study">Estudio</option>
-                            <option value="report">Reporte</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Estado:</label>
-                        <select id="caseStatus">
-                            <option value="closed">Cerrado</option>
-                            <option value="pending">Pendiente</option>
-                            <option value="settlement">Acuerdo</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Escala:</label>
-                        <select id="caseScale">
-                            <option value="individual">Individual</option>
-                            <option value="group">Grupal</option>
-                            <option value="community">Comunitario</option>
-                            <option value="population">Poblacional</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Descripción (3-4 líneas):</label>
-                        <textarea id="caseDescription"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Compensación/Resultado:</label>
-                        <input type="text" id="caseCompensation" placeholder="Ej: $78 millones | N/A | Pendiente">
-                    </div>
-
-                    <button class="ai-btn manual" onclick="showPreview()" style="width:100%; margin-top:10px;">👁️ Ver Vista Previa</button>
-                </div>
-
-                <div id="previewSection" class="preview-section" style="display:none;">
-                    <h3>Vista Previa:</h3>
-                    <div id="previewContent"></div>
-
-                    <div class="action-buttons">
-                        <button class="action-btn publish" onclick="publishCase()">✓ Publicar</button>
-                        <button class="action-btn edit" onclick="editCase()">✏️ Editar</button>
-                        <button class="action-btn draft" onclick="saveDraft()">💾 Guardar Borrador</button>
-                        <button class="action-btn discard" onclick="discardCase()">✕ Descartar</button>
-                    </div>
-                </div>
-                </div>
-
-                <div id="reportsTab" style="display: none;">
-                    <h3>📧 Reportes de Errores</h3>
-                    <p style="color: #6b7280; margin-bottom: 20px;">Reportes enviados por usuarios sobre información incorrecta o desactualizada.</p>
-
-                    <div id="reportsList" class="report-list">
-                        <!-- Los reportes aparecerán aquí -->
-                    </div>
-
-                    <p id="noReports" style="text-align: center; color: #9ca3af; padding: 40px;">
-                        No hay reportes pendientes
-                    </p>
+            <div class="detail-header">
+                <h1 class="detail-title">Barnes vs. Monsanto Company (2025)</h1>
+                <div class="badges">
+                    <span class="badge emblematico">⭐ EMBLEMÁTICO</span>
+                    <span class="badge acuerdo">🤝 ACUERDO</span>
                 </div>
             </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📍 Información del Tribunal</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">País</div>
+                        <div class="info-value">Estados Unidos</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Estado/Condado</div>
+                        <div class="info-value">Georgia, Cobb County</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Tribunal</div>
+                        <div class="info-value">State Court of Cobb County</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Jueza</div>
+                        <div class="info-value">Jane Manning</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Caso #</div>
+                        <div class="info-value">21-A-444</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">🧪 El Producto</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Nombre químico</div>
+                        <div class="info-value">Glifosato</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Nombre comercial</div>
+                        <div class="info-value">Roundup</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Tipo</div>
+                        <div class="info-value">Herbicida (no selectivo)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Fabricante</div>
+                        <div class="info-value">Monsanto (ahora Bayer)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Lugar de compra</div>
+                        <div class="info-value">Home Depot</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">👤 Demandante</h2>
+                <div class="section-content">
+                    <p><strong>Nombre:</strong> John Barnes</p>
+                    <p><strong>Residencia:</strong> Georgia</p>
+                    <p><strong>Tipo de exposición:</strong> Doméstica - Uso de Roundup en su hogar y jardín</p>
+                    <p><strong>Años de exposición:</strong> 1999-2019 (20 años)</p>
+                    <p><strong>Patrón de uso:</strong> Compra regular de Roundup en tiendas Home Depot para control de malezas en su propiedad</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">🩺 El Daño</h2>
+                <div class="section-content">
+                    <p><strong>Diagnóstico:</strong> Linfoma no-Hodgkin (NHL)</p>
+                    <p><strong>Fecha de diagnóstico:</strong> Marzo 2020</p>
+                    <p><strong>Relación causal alegada:</strong> El uso regular y prolongado de Roundup durante dos décadas causó el desarrollo del linfoma no-Hodgkin</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📖 Historia Completa del Caso</h2>
+                <div class="section-content">
+                    <p>Durante dos décadas, desde 1999 hasta 2019, John Barnes compró y usó regularmente Roundup en su hogar en Georgia. Como millones de estadounidenses, confiaba en que el herbicida más popular del país era seguro, tal como Monsanto afirmaba en sus etiquetas y campañas publicitarias.</p>
+
+                    <p style="margin-top: 10px;">En marzo de 2020, Barnes fue diagnosticado con linfoma no-Hodgkin, un cáncer del sistema linfático. Convencido de que su enfermedad fue causada por años de exposición al glifosato, presentó su demanda contra Monsanto en 2021.</p>
+
+                    <p style="margin-top: 10px;">El caso fue a juicio en marzo de 2025 en Cobb County, Georgia, convirtiéndose en el primer caso de Roundup en llegar a veredicto en un tribunal estatal de Georgia. Durante tres semanas, el equipo legal de Barnes presentó evidencia contundente, incluyendo los infames "Monsanto Papers" - documentos internos que revelaban décadas de manipulación científica y ocultamiento deliberado de información sobre los riesgos del glifosato.</p>
+
+                    <p style="margin-top: 10px;">La evidencia mostró que Monsanto conocía los vínculos del glifosato con el cáncer, pero deliberadamente no advirtió al público, trabajó para desacreditar estudios que mostraban los riesgos del químico, y ejerció presión para evitar cualquier advertencia en las etiquetas.</p>
+
+                    <p style="margin-top: 10px;">El 21 de marzo de 2025, el jurado emitió un veredicto histórico: $2.065 mil millones ($65 millones en daños compensatorios + $2 mil millones en daños punitivos), el veredicto más grande para un solo demandante en la historia de Georgia.</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📅 Cronología Procesal Completa</h2>
+                <div class="section-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">1999-2019</div>
+                            <div class="timeline-event">Barnes usa Roundup regularmente en su hogar en Georgia, comprándolo en tiendas Home Depot</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Marzo 2020</div>
+                            <div class="timeline-event">Diagnóstico de linfoma no-Hodgkin (NHL)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021</div>
+                            <div class="timeline-event">Barnes presenta demanda contra Monsanto/Bayer</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">3-21 de marzo 2025</div>
+                            <div class="timeline-event"><strong>JUICIO EN COBB COUNTY</strong> - Duración: 3 semanas ante la Jueza Jane Manning</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">21 de marzo 2025</div>
+                            <div class="timeline-event"><strong>VEREDICTO DEL JURADO:</strong> $2.065 mil millones ($65M compensatorios + $2B punitivos) - <strong>Veredicto récord en Georgia</strong></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Marzo-Abril 2025</div>
+                            <div class="timeline-event">Bayer anuncia que apelará el veredicto</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">12 de noviembre 2025</div>
+                            <div class="timeline-event"><strong>ACUERDO CONFIDENCIAL</strong> - Las partes alcanzan acuerdo confidencial. Se solicita a la corte anular el veredicto original</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">⚖️ Hallazgos del Jurado y Evidencia Presentada</h2>
+                <div class="section-content">
+                    <p><strong>El jurado determinó que:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Roundup fue un "factor sustancial" en causar el linfoma no-Hodgkin de Barnes</li>
+                        <li>Monsanto actuó con <strong>negligencia</strong> al no advertir adecuadamente sobre los riesgos</li>
+                        <li>Monsanto actuó con <strong>"willful misconduct"</strong> (mala conducta deliberada)</li>
+                        <li>El producto tenía un <strong>defecto de diseño</strong></li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Evidencia clave - Monsanto Papers:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Manipulación de investigación científica:</strong> Emails internos mostrando "ghostwriting" de estudios científicos favorables</li>
+                        <li><strong>Conocimiento de los riesgos:</strong> Documentos demostrando que Monsanto conocía los vínculos del glifosato con linfoma no-Hodgkin desde hace décadas</li>
+                        <li><strong>Ocultamiento deliberado:</strong> Evidencia de que Monsanto no advirtió al público pese a conocer los riesgos</li>
+                        <li><strong>Campaña de descrédito:</strong> Estrategias documentadas para desacreditar a científicos que cuestionaban la seguridad del glifosato</li>
+                        <li><strong>Presión a reguladores:</strong> Coordinación con la EPA para evitar advertencias de cáncer en las etiquetas</li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Testimonio del abogado Kyle Findley (Arnold & Itkin) en argumentos finales:</strong></p>
+                    <p style="margin-left: 20px; margin-top: 10px; font-style: italic;">"Está en blanco y negro. Está en sus emails. Mala conducta deliberada: donde intencionalmente no están advirtiendo al público, intencionalmente manipulando revistas científicas."</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">💰 Compensación y Acuerdo</h2>
+                <div class="compensation-box">
+                    <h3>Veredicto Original del Jurado (21 de marzo 2025)</h3>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>$65 millones</strong> en daños compensatorios (por el daño a la salud de Barnes)</li>
+                        <li><strong>$2,000 millones</strong> en daños punitivos (para castigar la conducta de Monsanto)</li>
+                        <li><strong>Total: $2,065,000,000</strong></li>
+                    </ul>
+
+                    <h3 style="margin-top: 20px;">Acuerdo Confidencial (12 de noviembre 2025)</h3>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Las partes alcanzaron un acuerdo confidencial después de que Bayer anunciara su intención de apelar</li>
+                        <li>Los términos del acuerdo no fueron divulgados públicamente</li>
+                        <li>Las partes solicitaron conjuntamente que la corte anulara el veredicto original</li>
+                        <li>Bayer indicó que también resolvió algunos otros casos pendientes en ese momento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">⭐ Importancia del Caso</h2>
+                <div class="section-content">
+                    <p><strong>Veredicto récord en Georgia:</strong> Los $2.065 mil millones representan el veredicto más grande para un solo demandante en la historia del estado de Georgia, superando cualquier veredicto previo en casos de responsabilidad por productos.</p>
+
+                    <p style="margin-top: 10px;"><strong>Primer caso Roundup en Georgia estatal:</strong> Este fue el primer caso de Roundup en llegar a veredicto en un tribunal estatal de Georgia, demostrando que los veredictos masivos contra Monsanto/Bayer no se limitan a California o tribunales federales.</p>
+
+                    <p style="margin-top: 10px;"><strong>Contexto de litigación masiva:</strong> El caso Barnes es uno de aproximadamente 177,000 demandas de Roundup presentadas contra Bayer en Estados Unidos. Bayer enfrenta más de 60,000 reclamaciones pendientes de demandantes que alegan que el glifosato causó su cáncer.</p>
+
+                    <p style="margin-top: 10px;"><strong>Patrón establecido:</strong> El veredicto confirma el patrón visto en casos emblemáticos como Johnson (2018), Hardeman (2019), y Pilliod (2019), donde los jurados consistentemente encuentran que Monsanto conocía los riesgos del glifosato pero no advirtió al público.</p>
+
+                    <p style="margin-top: 10px;"><strong>Presión legislativa de Bayer:</strong> Paralelamente a este veredicto, Bayer intensificó esfuerzos para promover legislación estatal que limitaría las demandas contra fabricantes de pesticidas. En 2024-2025, legislación de "preemption" avanzó en varios estados (Iowa, Missouri, Idaho, Florida, North Dakota, Tennessee, Oklahoma, Georgia) con el objetivo de bloquear futuras demandas.</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">👥 Equipo Legal</h2>
+                <div class="section-content">
+                    <p><strong>Abogados de Barnes:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Roy Barnes</strong> y <strong>John Bevis</strong> - Barnes Law Group</li>
+                        <li><strong>Kyle Findley</strong> y <strong>Noah Wexler</strong> - Arnold & Itkin</li>
+                        <li><strong>Frank Bayuk</strong>, <strong>Bradley Pratt</strong>, y <strong>Christopher Lambden</strong> - Bayuk Pratt</li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><em>Nota: Roy Barnes es un ex-gobernador de Georgia (1999-2003) y uno de los abogados litigantes más prominentes del estado.</em></p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">🔍 Contexto: La Guerra Legal de Bayer</h2>
+                <div class="section-content">
+                    <p>El caso Barnes se produce en un momento crítico para Bayer/Monsanto:</p>
+
+                    <p style="margin-top: 10px;"><strong>Carga financiera masiva:</strong> Desde que Bayer adquirió Monsanto en 2018, ha pagado más de $10 mil millones en acuerdos relacionados con Roundup, resolviendo más de 100,000 demandas en Estados Unidos.</p>
+
+                    <p style="margin-top: 10px;"><strong>Estrategia dual de Bayer:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>En tribunales:</strong> Defender vigorosamente cada caso, apelar veredictos adversos, buscar reducir montos mediante remittitur</li>
+                        <li><strong>En legislaturas estatales:</strong> Promover agresivamente leyes de "preemption" que impedirían futuras demandas por fallo en advertir sobre pesticidas aprobados por la EPA</li>
+                    </ul>
+
+                    <p style="margin-top: 10px;"><strong>Acuerdos estratégicos:</strong> Bayer ha optado por resolver casos con veredictos astronómicos (como Barnes) mediante acuerdos confidenciales, evitando establecer precedentes de veredictos multimillonarios confirmados en apelación.</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📚 Fuentes Oficiales Verificadas</h2>
+                <div class="sources-box">
+                    <ul class="sources-list">
+                        <li class="source-item"><span class="source-icon">⚖️</span><div class="source-content"><div class="source-title">Courtroom View Network: Barnes v. Monsanto Trial Coverage</div><a href="https://cvn.com/proceedings/barnes-v-home-depot-et-al-trial-2025-02-24" target="_blank" class="source-link">Video →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">CNN: Georgia jury orders Monsanto parent to pay nearly $2.1 billion</div><a href="https://www.cnn.com/2025/03/24/us/bayer-monsanto-to-pay-2-billion-roundup" target="_blank" class="source-link">Leer →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">The Hill: Monsanto parent ordered to pay $2B in Roundup lawsuit damages</div><a href="https://thehill.com/policy/energy-environment/5211476-roundup-cancer-2-billion-verdict/" target="_blank" class="source-link">Artículo →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">Atlanta Journal-Constitution: Monsanto settles $2B case about Georgia man's Roundup use</div><a href="https://www.ajc.com/news/2025/11/monsanto-settles-2b-case-about-georgia-mans-roundup-use/" target="_blank" class="source-link">Leer →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">AboutLawsuits: Monsanto Roundup Settlement Avoids $2B Payout</div><a href="https://www.aboutlawsuits.com/monsanto-roundup-settlement-2b-payout-non-hodgkins-lymphoma-lawsuit/" target="_blank" class="source-link">Análisis →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">Beyond Pesticides: Multi-Billion Verdict Against Bayer/Monsanto in GA</div><a href="https://beyondpesticides.org/dailynewsblog/2025/04/multi-billion-verdict-against-bayer-monsanto-in-georgia-as-legal-rights-under-attack-in-the-state-and-nationwide/" target="_blank" class="source-link">Análisis →</a></div></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="back-btn" onclick="hideDetail()" style="margin-top: 20px;">← Volver a la lista</button>
         </div>
     </div>
-
-    <!-- Botón de acceso admin -->
-    <button class="admin-access" onclick="openAdmin()" title="Panel de administración">+</button>
 
     <!-- MODAL DISCLAIMER COMPLETO -->
     <div id="disclaimerModal" class="disclaimer-modal">
@@ -5312,6 +5267,7 @@
         let stephensDetailHTML = null;
         let carsonDetailHTML = null;
         let atrazinaDetailHTML = null;
+        let barnesDetailHTML = null;
 
         // Cargar casos guardados al inicio
         document.addEventListener('DOMContentLoaded', function() {
@@ -5337,6 +5293,7 @@
             stephensDetailHTML = document.getElementById('stephensDetailView').innerHTML;
             carsonDetailHTML = document.getElementById('carsonDetailView').innerHTML;
             atrazinaDetailHTML = document.getElementById('atrazinaDetailView').innerHTML;
+            barnesDetailHTML = document.getElementById('barnesDetailView').innerHTML;
             loadSavedCases();
             updateStats();
         });
@@ -5689,6 +5646,15 @@
                 return;
             }
 
+            // Si es el caso Barnes, mostrar la vista detallada completa (estática)
+            if (title === 'Barnes vs. Monsanto (2025)' && barnesDetailHTML) {
+                document.getElementById('detailView').innerHTML = barnesDetailHTML;
+                document.getElementById('mainView').style.display = 'none';
+                document.getElementById('detailView').classList.add('active');
+                window.scrollTo(0, 0);
+                return;
+            }
+
             const badges = Array.from(caseCard.querySelectorAll('.badge')).map(b => b.outerHTML).join('');
             const metaItems = Array.from(caseCard.querySelectorAll('.meta-item')).map(m => m.textContent);
             const description = caseCard.querySelector('.case-description').textContent;
@@ -5825,262 +5791,6 @@
             });
         });
 
-        // ========== PANEL DE ADMINISTRACIÓN ==========
-
-        function openAdmin() {
-            document.getElementById('adminPanel').classList.add('active');
-            // Actualizar contador de reportes
-            const reports = JSON.parse(localStorage.getItem('error_reports') || '[]');
-            document.getElementById('reportCount').textContent = reports.length;
-            // Mostrar pestaña de cargar caso por defecto
-            showTab('newCase');
-        }
-
-        function closeAdmin() {
-            document.getElementById('adminPanel').classList.remove('active');
-            resetForm();
-        }
-
-        function resetForm() {
-            document.getElementById('caseIdentifier').value = '';
-            document.getElementById('formFields').style.display = 'none';
-            document.getElementById('previewSection').style.display = 'none';
-        }
-
-        function useAI(type) {
-            const identifier = document.getElementById('caseIdentifier').value.trim();
-            if (!identifier) {
-                alert('Por favor ingresa un identificador del caso');
-                return;
-            }
-
-            // PLACEHOLDER - Simula respuesta de IA
-            alert(`🤖 IA ${type} analizando: "${identifier}"\n\nEn producción, esto llamaría a una API de IA para proponer datos basados en el identificador.`);
-
-            // Llenar formulario con datos de ejemplo (placeholder)
-            document.getElementById('caseTitle').value = identifier;
-            document.getElementById('caseCompany').value = 'Empresa Ejemplo S.A.';
-            document.getElementById('caseProduct').value = 'Glifosato (Roundup)';
-            document.getElementById('caseCountry').value = 'Estados Unidos';
-            document.getElementById('caseYear').value = '2025';
-            document.getElementById('caseDescription').value = 'Descripción generada por IA ' + type + '. Este es un placeholder. En producción, la IA analizaría el identificador y propondría datos verificables basados en fuentes públicas.';
-            document.getElementById('caseCompensation').value = '$X millones (estimado)';
-
-            document.getElementById('formFields').style.display = 'block';
-        }
-
-        function manualEntry() {
-            const identifier = document.getElementById('caseIdentifier').value.trim();
-            if (!identifier) {
-                alert('Por favor ingresa un identificador del caso');
-                return;
-            }
-
-            // Limpiar campos para carga manual
-            document.getElementById('caseTitle').value = '';
-            document.getElementById('caseCompany').value = '';
-            document.getElementById('caseProduct').value = '';
-            document.getElementById('caseCountry').value = '';
-            document.getElementById('caseYear').value = '';
-            document.getElementById('caseDescription').value = '';
-            document.getElementById('caseCompensation').value = '';
-
-            document.getElementById('formFields').style.display = 'block';
-        }
-
-        function showPreview() {
-            const title = document.getElementById('caseTitle').value;
-            const company = document.getElementById('caseCompany').value;
-            const product = document.getElementById('caseProduct').value;
-            const country = document.getElementById('caseCountry').value;
-            const year = document.getElementById('caseYear').value;
-            const type = document.getElementById('caseType').value;
-            const status = document.getElementById('caseStatus').value;
-            const scale = document.getElementById('caseScale').value;
-            const description = document.getElementById('caseDescription').value;
-            const compensation = document.getElementById('caseCompensation').value;
-
-            if (!title || !description) {
-                alert('Título y descripción son obligatorios');
-                return;
-            }
-
-            // Determinar badge según tipo
-            let badgeHTML = '';
-            if (type === 'judicial') {
-                badgeHTML = status === 'closed' ? '<span class="badge ganado">✓ GANADO</span>' :
-                           status === 'pending' ? '<span class="badge pendiente">⏳ PENDIENTE</span>' :
-                           '<span class="badge acuerdo">🤝 ACUERDO</span>';
-            } else if (type === 'extrajudicial') {
-                badgeHTML = '<span class="badge no-judicializado">📋 EXTRAJUDICIAL</span>';
-            } else if (type === 'study') {
-                badgeHTML = '<span class="badge estudio">🔬 ESTUDIO</span>';
-            } else if (type === 'report') {
-                badgeHTML = '<span class="badge reporte">📊 REPORTE</span>';
-            }
-
-            const previewHTML = `
-                <div class="case-card" style="max-width: 100%;">
-                    <div class="case-header">
-                        <h3 class="case-title">${title}</h3>
-                        <div class="badges">${badgeHTML}</div>
-                    </div>
-                    <div class="case-meta">
-                        <span class="meta-item">📍 ${country}</span>
-                        <span class="meta-item">🧪 ${product}</span>
-                        <span class="meta-item">🏢 ${company}</span>
-                    </div>
-                    <div class="case-description">${description}</div>
-                    <div class="case-footer">
-                        <div class="compensation">💰 ${compensation}</div>
-                    </div>
-                </div>
-                <p style="margin-top: 15px; color: #6b7280; font-size: 0.9em;">
-                    <strong>Datos adicionales:</strong><br>
-                    Año: ${year} | Tipo: ${type} | Escala: ${scale}
-                </p>
-            `;
-
-            document.getElementById('previewContent').innerHTML = previewHTML;
-            document.getElementById('previewSection').style.display = 'block';
-        }
-
-        function publishCase() {
-            const caseData = {
-                title: document.getElementById('caseTitle').value,
-                company: document.getElementById('caseCompany').value,
-                product: document.getElementById('caseProduct').value,
-                country: document.getElementById('caseCountry').value,
-                year: document.getElementById('caseYear').value,
-                type: document.getElementById('caseType').value,
-                status: document.getElementById('caseStatus').value,
-                scale: document.getElementById('caseScale').value,
-                description: document.getElementById('caseDescription').value,
-                compensation: document.getElementById('caseCompensation').value,
-                id: 'case_' + Date.now()
-            };
-
-            // Guardar en localStorage
-            const savedCases = JSON.parse(localStorage.getItem('published_cases') || '[]');
-            savedCases.push(caseData);
-            localStorage.setItem('published_cases', JSON.stringify(savedCases));
-
-            // Insertar en DOM
-            insertCaseIntoDOM(caseData);
-
-            // Actualizar estadísticas
-            updateStats();
-
-            alert('✓ Caso publicado correctamente');
-            closeAdmin();
-        }
-
-        function insertCaseIntoDOM(caseData) {
-            // Determinar producto slug
-            const productSlug = caseData.product.toLowerCase().includes('glifosato') || caseData.product.toLowerCase().includes('glyphosate') ? 'glyphosate' :
-                               caseData.product.toLowerCase().includes('paraquat') ? 'paraquat' :
-                               caseData.product.toLowerCase().includes('dicamba') ? 'dicamba' :
-                               caseData.product.toLowerCase().includes('atrazin') ? 'atrazine' : 'other';
-
-            // Determinar badge
-            let badgeHTML = '';
-            if (caseData.type === 'judicial') {
-                if (caseData.status === 'closed') badgeHTML = '<span class="badge ganado">✓ GANADO</span>';
-                else if (caseData.status === 'pending') badgeHTML = '<span class="badge pendiente">⏳ PENDIENTE</span>';
-                else badgeHTML = '<span class="badge acuerdo">🤝 ACUERDO</span>';
-            } else if (caseData.type === 'extrajudicial') {
-                badgeHTML = '<span class="badge no-judicializado">📋 EXTRAJUDICIAL</span>';
-            } else if (caseData.type === 'study') {
-                badgeHTML = '<span class="badge estudio">🔬 ESTUDIO</span>';
-            } else if (caseData.type === 'report') {
-                badgeHTML = '<span class="badge reporte">📊 REPORTE</span>';
-            }
-
-            // Generar HTML del caso
-            const caseHTML = `
-                <div class="case-card" id="${caseData.id}"
-                     data-country="${caseData.country.toLowerCase().includes('usa') || caseData.country.toLowerCase().includes('estados unidos') ? 'usa' : caseData.country.toLowerCase().includes('francia') || caseData.country.toLowerCase().includes('france') ? 'france' : 'other'}"
-                     data-product="${productSlug}"
-                     data-status="${caseData.status}"
-                     data-damage="other"
-                     data-emblematic="false"
-                     data-casetype="${caseData.type}"
-                     data-scale="${caseData.scale}"
-                     data-search="${caseData.title.toLowerCase()} ${caseData.company.toLowerCase()} ${caseData.product.toLowerCase()} ${caseData.country.toLowerCase()}">
-                    <div class="case-header">
-                        <h3 class="case-title">${caseData.title}</h3>
-                        <div class="badges">${badgeHTML}</div>
-                    </div>
-
-                    <div class="case-meta">
-                        <span class="meta-item">📍 ${caseData.country}</span>
-                        <span class="meta-item">🧪 ${caseData.product}</span>
-                        <span class="meta-item">🏢 ${caseData.company}</span>
-                    </div>
-
-                    <div class="case-description">
-                        ${caseData.description}
-                    </div>
-
-                    <div class="case-tags">
-                        <span class="tag">📅 ${caseData.year}</span>
-                        <span class="tag">👥 ${caseData.scale}</span>
-                    </div>
-
-                    <div class="case-footer">
-                        <div class="compensation">💰 ${caseData.compensation}</div>
-                        <button class="view-details-btn" onclick="showDetail(this)">Ver detalles completos →</button>
-                    </div>
-                </div>
-            `;
-
-            // Determinar sección donde insertar
-            let targetSection;
-            if (caseData.type !== 'judicial') {
-                // Casos no judicializados
-                targetSection = document.querySelector('[data-country="non-judicial"] .cases-container');
-            } else if (caseData.country.toLowerCase().includes('usa') || caseData.country.toLowerCase().includes('estados unidos')) {
-                targetSection = document.querySelector('[data-country="usa"] .cases-container');
-            } else if (caseData.country.toLowerCase().includes('francia') || caseData.country.toLowerCase().includes('france')) {
-                targetSection = document.querySelector('[data-country="france"] .cases-container');
-            } else {
-                targetSection = document.querySelector('[data-country="other"] .cases-container');
-            }
-
-            if (targetSection) {
-                targetSection.insertAdjacentHTML('beforeend', caseHTML);
-            }
-        }
-
-        function editCase() {
-            document.getElementById('previewSection').style.display = 'none';
-            alert('Volviendo al formulario para editar...');
-        }
-
-        function saveDraft() {
-            const caseData = {
-                title: document.getElementById('caseTitle').value,
-                company: document.getElementById('caseCompany').value,
-                product: document.getElementById('caseProduct').value,
-                country: document.getElementById('caseCountry').value,
-                year: document.getElementById('caseYear').value,
-                type: document.getElementById('caseType').value,
-                status: document.getElementById('caseStatus').value,
-                scale: document.getElementById('caseScale').value,
-                description: document.getElementById('caseDescription').value,
-                compensation: document.getElementById('caseCompensation').value
-            };
-
-            localStorage.setItem('draft_case_' + Date.now(), JSON.stringify(caseData));
-            alert('💾 Borrador guardado en localStorage\n\nEn producción, esto guardaría el borrador en una base de datos.');
-            closeAdmin();
-        }
-
-        function discardCase() {
-            if (confirm('¿Estás seguro de descartar este caso?')) {
-                closeAdmin();
-            }
-        }
 
         // ========== FUNCIONES DE DISCLAIMER ==========
 
@@ -6132,61 +5842,6 @@
             closeReportModal();
         }
 
-        // PANEL ADMIN - PESTAÑAS
-
-        function showTab(tabName) {
-            if (tabName === 'newCase') {
-                document.getElementById('newCaseTab').style.display = 'block';
-                document.getElementById('reportsTab').style.display = 'none';
-                document.getElementById('tabNewCase').style.background = '#667eea';
-                document.getElementById('tabNewCase').style.color = 'white';
-                document.getElementById('tabReports').style.background = 'white';
-                document.getElementById('tabReports').style.color = '#667eea';
-            } else if (tabName === 'reports') {
-                document.getElementById('newCaseTab').style.display = 'none';
-                document.getElementById('reportsTab').style.display = 'block';
-                document.getElementById('tabNewCase').style.background = 'white';
-                document.getElementById('tabNewCase').style.color = '#667eea';
-                document.getElementById('tabReports').style.background = '#667eea';
-                document.getElementById('tabReports').style.color = 'white';
-                loadReports();
-            }
-        }
-
-        function loadReports() {
-            const reports = JSON.parse(localStorage.getItem('error_reports') || '[]');
-            const reportsList = document.getElementById('reportsList');
-            const noReports = document.getElementById('noReports');
-
-            document.getElementById('reportCount').textContent = reports.length;
-
-            if (reports.length === 0) {
-                reportsList.innerHTML = '';
-                noReports.style.display = 'block';
-                return;
-            }
-
-            noReports.style.display = 'none';
-            reportsList.innerHTML = reports.map(report => `
-                <div class="report-item">
-                    <div class="report-header">
-                        <span><strong>Caso:</strong> ${report.case}</span>
-                        <span>${report.date}</span>
-                    </div>
-                    <div class="report-text">${report.description}</div>
-                    <button class="report-delete" onclick="deleteReport('${report.id}')">Eliminar</button>
-                </div>
-            `).reverse().join('');
-        }
-
-        function deleteReport(reportId) {
-            if (!confirm('¿Eliminar este reporte?')) return;
-
-            let reports = JSON.parse(localStorage.getItem('error_reports') || '[]');
-            reports = reports.filter(r => r.id !== reportId);
-            localStorage.setItem('error_reports', JSON.stringify(reports));
-            loadReports();
-        }
 
         // Verificar si el banner fue cerrado previamente
         document.addEventListener('DOMContentLoaded', function() {
